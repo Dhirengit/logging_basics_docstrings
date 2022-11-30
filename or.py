@@ -8,16 +8,13 @@ def main(data, model_name, plotname, eta, ephochs):
 
     X,y = prepare_data(df_or)
 
-    ETA=0.1 
-    n = 10
-
     model_or = Perceptron(eta=eta, epochs=ephochs)
     model_or.fit(X,y)
 
     _ = model_or.total_loss()
 
 
-    model_or.save(filename=model_name, model_dir="model_or")
+    model_or.save(filename=model_name, model_dir="model")
 
     save_plot(df_or, model_or, filename=plotname)
 
